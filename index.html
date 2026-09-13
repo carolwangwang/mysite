@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人專業履歷 - 財務數據分析與流程自動化</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif), Plus Jakarta Sans & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        korea: {
+                            bg: '#F9F8F6',
+                            card: '#FFFFFF',
+                            taupe: '#9E8E7E',
+                            'taupe-dark': '#7A6B5D',
+                            sand: '#EFECE6',
+                            clay: '#C8B9A6',
+                            charcoal: '#222220',
+                            slate: '#141312',
+                            darkcard: '#1C1B1A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F9F8F6;
+            color: #222220;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .dark body, html.dark body {
+            background-color: #141312;
+            color: #F3F0EB;
+        }
+        .korea-glass {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(225, 220, 212, 0.6);
+            transition: all 0.3s ease;
+        }
+        .dark .korea-glass, html.dark .korea-glass {
+            background: rgba(28, 27, 26, 0.85);
+            border-color: rgba(60, 56, 52, 0.6);
+        }
+        .korea-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(230, 225, 217, 0.9);
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .korea-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.06);
+        }
+        .dark .korea-card, html.dark .korea-card {
+            background: #1C1B1A;
+            border-color: rgba(55, 52, 48, 0.8);
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+        }
+        .dark .korea-card:hover {
+            box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.6);
+        }
+        .korea-accent-text {
+            color: #8C7A6B;
+        }
+        html.dark .korea-accent-text {
+            color: #D9C2AD;
+        }
+        /* Custom typography overrides for dark mode readability */
+        html.dark .text-korea-charcoal { color: #F3F0EB !important; }
+        html.dark .text-stone-700 { color: #E3DDD4 !important; }
+        html.dark .text-stone-600 { color: #C9C2B7 !important; }
+        html.dark .text-stone-500 { color: #A69E92 !important; }
+        html.dark .bg-stone-100 { background-color: #272523 !important; }
+        html.dark .border-stone-200 { border-color: rgba(70, 65, 60, 0.6) !important; }
+    </style>
+</head>
+<body class="bg-korea-bg text-korea-charcoal font-sans antialiased selection:bg-korea-sand selection:text-korea-charcoal">
+
+    <!-- Audio Background Element -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://img.ai365.fans/artworks/19423853-bd09-46a2-8b55-aee1897ff8b0/f7pzzorio2.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 korea-glass transition-all duration-300 border-b border-stone-200/50 dark:border-stone-800">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-full overflow-hidden border border-stone-300 dark:border-stone-700 shrink-0 shadow-sm">
+                        <img src="vhbtizoqt5t.png" alt="個人頭貼" class="w-full h-full object-cover object-center" onerror="this.onerror=null; this.src='https://placehold.co/100x100/9E8E7E/FFFFFF?text=S';">
+                    </div>
+                    <div>
+                        <span class="text-sm font-semibold tracking-wider text-korea-charcoal dark:text-stone-100 block uppercase leading-tight">FINANCE & AI </span>
+                        <span class="text-[11px] text-stone-500 dark:text-stone-400 font-light tracking-widest">財務數據與流程自動化</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-7 text-xs font-medium uppercase tracking-widest text-stone-600 dark:text-stone-300">
+                    <a href="#about" class="hover:text-korea-taupe transition-colors">優勢</a>
+                    <a href="#impact" class="hover:text-korea-taupe transition-colors">成果</a>
+                    <a href="#experience" class="hover:text-korea-taupe transition-colors">經歷</a>
+                    <a href="#skills" class="hover:text-korea-taupe transition-colors">技能</a>
+                    <a href="#certifications" class="hover:text-korea-taupe transition-colors">證照</a>
+                    
+                    <!-- Control Actions: Music & Theme Buttons -->
+                    <div class="flex items-center space-x-2 pl-3 border-l border-stone-200 dark:border-stone-800">
+                        <!-- Music Toggle -->
+                        <button id="music-btn" onclick="toggleMusic()" class="p-2 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:opacity-80 transition-all flex items-center gap-1.5 text-xs font-medium" title="播放/暫停背景音樂">
+                            <i id="music-icon" class="fa-solid fa-music text-[11px]"></i>
+                            <span id="music-text" class="hidden lg:inline text-[11px]">Music Off</span>
+                        </button>
+
+                        <!-- Theme Toggle -->
+                        <button id="theme-btn" onclick="toggleTheme()" class="p-2 w-8 h-8 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:opacity-80 transition-all text-xs flex items-center justify-center" title="切換深色/淺色模式">
+                            <i id="theme-icon" class="fa-solid fa-moon text-[11px]"></i>
+                        </button>
+                    </div>
+
+                    <a href="#contact" class="px-5 py-2 rounded-full bg-korea-charcoal text-white dark:bg-stone-200 dark:text-korea-charcoal text-xs font-medium tracking-wider hover:bg-stone-800 transition-all">聯絡方式</a>
+                </nav>
+
+                <!-- Mobile Menu Header Controls -->
+                <div class="flex items-center space-x-2 md:hidden">
+                    <button id="mobile-music-btn" onclick="toggleMusic()" class="p-2 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs">
+                        <i id="mobile-music-icon" class="fa-solid fa-music"></i>
+                    </button>
+                    <button id="mobile-theme-btn" onclick="toggleTheme()" class="p-2 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs">
+                        <i id="mobile-theme-icon" class="fa-solid fa-moon"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-korea-charcoal dark:text-stone-200 p-2 focus:outline-none" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200/60 dark:border-stone-800 bg-korea-bg dark:bg-stone-900 px-6 py-5 space-y-3 text-xs tracking-widest font-medium uppercase">
+            <a href="#about" class="mobile-link block py-2 text-stone-700 dark:text-stone-300 border-b border-stone-100 dark:border-stone-800">核心優勢</a>
+            <a href="#impact" class="mobile-link block py-2 text-stone-700 dark:text-stone-300 border-b border-stone-100 dark:border-stone-800">量化成果</a>
+            <a href="#experience" class="mobile-link block py-2 text-stone-700 dark:text-stone-300 border-b border-stone-100 dark:border-stone-800">職責與貢獻</a>
+            <a href="#skills" class="mobile-link block py-2 text-stone-700 dark:text-stone-300 border-b border-stone-100 dark:border-stone-800">專業技能</a>
+            <a href="#certifications" class="mobile-link block py-2 text-stone-700 dark:text-stone-300 border-b border-stone-100 dark:border-stone-800">專業證照</a>
+            <a href="#contact" class="mobile-link block py-2 text-korea-taupe dark:text-korea-clay font-bold">聯絡方式</a>
+        </div>
+    </header>
+
+    <!-- Hero / Introductory Section -->
+    <section id="about" class="pt-36 pb-20 md:pt-44 md:pb-28">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+            <!-- Profile Avatar -->
+            <div class="relative w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-korea-taupe/40 shadow-md p-1 bg-white dark:bg-stone-900">
+                <img src="vhbtizoqt5t.png" alt="個人頭貼" class="w-full h-full rounded-full object-cover object-center" onerror="this.onerror=null; this.src='https://placehold.co/200x200/9E8E7E/FFFFFF?text=Avatar';">
+            </div>
+
+            <!-- Korean Minimalist Subtitle Pill -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-600 dark:text-stone-300 text-xs font-medium tracking-widest uppercase mb-8 shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-korea-taupe"></span>
+                Financial Data × AI Automation
+            </div>
+
+            <!-- Main Heading with Editorial Garamond Accent -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-light text-korea-charcoal dark:text-stone-100 tracking-tight leading-snug mb-8">
+                結合 <span class="font-medium text-korea-taupe dark:text-korea-clay">財務數據分析</span><br class="hidden sm:inline">
+                與 <span class="font-medium text-korea-taupe dark:text-korea-clay">流程優化</span> 
+            </h1>
+
+            <!-- Bio Description Paragraph -->
+            <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 mb-10 leading-relaxed font-normal max-w-2xl mx-auto">
+                擁有三年跨年度財務資料管理與小團隊帶領經驗。跨部門合作運用 <strong class="font-semibold text-korea-charcoal dark:text-white">Python、Genimi、VBA</strong> 將繁複的財務流程自動化，顯著提升資料精準度並實現最高 70% 的工時精簡。
+            </p>
+
+            <!-- Minimal Call-to-Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#experience" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-korea-charcoal text-white dark:bg-stone-100 dark:text-korea-charcoal text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-all shadow-sm">
+                    查看主要貢獻
+                </a>
+                <button onclick="copyContactEmail()" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white dark:bg-stone-900 text-korea-charcoal dark:text-stone-200 text-xs font-medium tracking-widest uppercase hover:bg-stone-50 dark:hover:bg-stone-800 transition-all border border-stone-200 dark:border-stone-800">
+                    複製 Email 聯絡
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantified Impact Highlights -->
+    <section id="impact" class="py-16 bg-stone-100/60 dark:bg-stone-900/40 border-y border-stone-200/60 dark:border-stone-800/80">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                
+                <!-- Metric Card 1 -->
+                <div class="korea-card p-6 rounded-2xl">
+                    <div class="font-serif text-4xl sm:text-5xl font-normal text-korea-charcoal dark:text-stone-100 mb-2">
+                        70<span class="text-2xl font-sans">%工時精簡</span>
+                    </div>
+                    <div class="text-xs font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-wider mb-1">香港會計師意見流程</div>
+                    <div class="text-xs text-stone-500 dark:text-stone-400 font-light">正確率提升至 90%</div>
+                </div>
+
+                <!-- Metric Card 2 -->
+                <div class="korea-card p-6 rounded-2xl">
+                    <div class="font-serif text-4xl sm:text-5xl font-normal text-korea-charcoal dark:text-stone-100 mb-2">
+                        40<span class="text-2xl font-sans">%工時減少</span>
+                    </div>
+                    <div class="text-xs font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-wider mb-1">中國財務附註關係人段</div>
+                    <div class="text-xs text-stone-500 dark:text-stone-400 font-light">維護人力 5人 ➔ 2人</div>
+                </div>
+
+                <!-- Metric Card 3 -->
+                <div class="korea-card p-6 rounded-2xl">
+                    <div class="font-serif text-4xl sm:text-5xl font-normal text-korea-charcoal dark:text-stone-100 mb-2">
+                        15<span class="text-2xl font-sans">%</span>
+                    </div>
+                    <div class="text-xs font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-wider mb-1">香港財務複性作業工時精簡</div>
+                    <div class="text-xs text-stone-500 dark:text-stone-400 font-light">結合 ChatGPT、Python 與 VBA</div>
+                </div>
+
+                <!-- Metric Card 4 -->
+                <div class="korea-card p-6 rounded-2xl">
+                    <div class="font-serif text-4xl sm:text-5xl font-normal text-korea-charcoal dark:text-stone-100 mb-2">
+                        3<span class="text-xl font-sans"> Years+</span>
+                    </div>
+                    <div class="text-xs font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-wider mb-1">跨年度香港財務專案管理</div>
+                    <div class="text-xs text-stone-500 dark:text-stone-400 font-light">統籌帶領 4-5 位團隊成員</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Experience & Achievements -->
+    <section id="experience" class="py-24">
+        <div class="max-w-5xl mx-auto px-5 sm:px-8">
+            <!-- Section Title -->
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-widest text-korea-taupe dark:text-korea-clay uppercase">Core Contributions</span>
+                <h2 class="text-2xl sm:text-4xl font-light text-korea-charcoal dark:text-stone-100 mt-2">職責與關鍵貢獻</h2>
+                <div class="w-8 h-[1px] bg-korea-taupe mx-auto mt-4"></div>
+            </div>
+
+            <div class="space-y-8">
+
+                <!-- Card 1: RPA & AI Project -->
+                <div class="korea-card p-7 sm:p-9 rounded-3xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-stone-100 dark:border-stone-800">
+                        <div>
+                            <span class="text-[11px] font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-widest block mb-1">Automation & AI</span>
+                            <h3 class="text-xl font-medium text-korea-charcoal dark:text-stone-100">RPA 自動化跨部門專案推動</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">Python</span>
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">Gemini Flash</span>
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">跨部門協作</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Subitem 1 -->
+                        <div class="p-5 rounded-2xl bg-stone-50/80 dark:bg-stone-900/60 border border-stone-200/50 dark:border-stone-800">
+                            <h4 class="text-sm font-semibold text-korea-charcoal dark:text-stone-200 mb-2">中國財務附註關係人段自動化</h4>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                                主導需求溝通、規格文件制定、進度追蹤與最終成果驗收，成功實現關係人段作業流程優化。
+                            </p>
+                            <div class="text-xs text-korea-taupe dark:text-korea-clay font-medium pt-3 border-t border-stone-200/60 dark:border-stone-800 flex justify-between">
+                                <span>工時減少 <strong>40%</strong></span>
+                                <span>人力：5人 ➔ <strong>2人</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Subitem 2 -->
+                        <div class="p-5 rounded-2xl bg-stone-50/80 dark:bg-stone-900/60 border border-stone-200/50 dark:border-stone-800">
+                            <h4 class="text-sm font-semibold text-korea-charcoal dark:text-stone-200 mb-2">香港會計師意見流程創新</h4>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                                與 IT 部門密切合作，運用 Python 與 Gemini Flash 技術優化報告比對與意見整理流程。
+                            </p>
+                            <div class="text-xs text-korea-taupe dark:text-korea-clay font-medium pt-3 border-t border-stone-200/60 dark:border-stone-800 flex justify-between">
+                                <span>工時減少 <strong>70%</strong></span>
+                                <span>正確率：<strong>升至 90%</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Optimization & Analytics -->
+                <div class="korea-card p-7 sm:p-9 rounded-3xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-stone-100 dark:border-stone-800">
+                        <div>
+                            <span class="text-[11px] font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-widest block mb-1">Process & Data Verification</span>
+                            <h3 class="text-xl font-medium text-korea-charcoal dark:text-stone-100">香港財務業務流程優化與數據驗證</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">ChatGPT</span>
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">SQL</span>
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">VBA / Python</span>
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">Excel</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-xs sm:text-sm text-stone-600 dark:text-stone-300">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-korea-taupe mt-2 shrink-0"></span>
+                            <span><strong class="text-korea-charcoal dark:text-stone-100 font-semibold">重複性作業工時精簡 15%：</strong> 於香港財務業務中，善用 ChatGPT 生成 Python 及 VBA 自動化指令，優化重複性作業流程。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-korea-taupe mt-2 shrink-0"></span>
+                            <span><strong class="text-korea-charcoal dark:text-stone-100 font-semibold">數據清洗與缺失值修正：</strong> 運用 SQL 與 Excel 進行多維度資料驗證分析，精準找出數據異常與缺失值並即時更正，大幅提升財務資料品質與正確性。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Project Management -->
+                <div class="korea-card p-7 sm:p-9 rounded-3xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-stone-100 dark:border-stone-800">
+                        <div>
+                            <span class="text-[11px] font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-widest block mb-1">Financial Project Leadership</span>
+                            <h3 class="text-xl font-medium text-korea-charcoal dark:text-stone-100">跨年度財務專案管理</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">團隊領導 (4-5人)</span>
+                            <span class="text-[11px] px-3 py-1 rounded-full bg-korea-sand dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">時程管控</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-xs sm:text-sm text-stone-600 dark:text-stone-300">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-korea-taupe mt-2 shrink-0"></span>
+                            <span><strong class="text-korea-charcoal dark:text-stone-100 font-semibold">三年財務資料穩定維護：</strong> 帶領 4–5 位同仁完成連續三年以上的財務資料維護與品質提升。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-korea-taupe mt-2 shrink-0"></span>
+                            <span><strong class="text-korea-charcoal dark:text-stone-100 font-semibold">統籌規劃與流程優化：</strong> 主導工作任務分配與 key milestone 時程掌控，優化團隊整體工作流程，確保資料高度精確無虞。</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities & Continuous Learning -->
+    <section id="skills" class="py-24 bg-stone-100/60 dark:bg-stone-900/40 border-t border-stone-200/60 dark:border-stone-800">
+        <div class="max-w-5xl mx-auto px-5 sm:px-8">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-widest text-korea-taupe dark:text-korea-clay uppercase">Capabilities</span>
+                <h2 class="text-2xl sm:text-4xl font-light text-korea-charcoal dark:text-stone-100 mt-2">專業技能與 AI 整合應用</h2>
+                <div class="w-8 h-[1px] bg-korea-taupe mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Category 1: Data & Automation -->
+                <div class="korea-card p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-widest mb-2">01. Data & Scripting</div>
+                        <h3 class="text-lg font-medium text-korea-charcoal dark:text-stone-100 mb-6">資料分析與自動化</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-xs font-medium border border-stone-200/60 dark:border-stone-700">VBA</span>
+                            <span class="px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-xs font-medium border border-stone-200/60 dark:border-stone-700">SQL</span>
+                            <span class="px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-xs font-medium border border-stone-200/60 dark:border-stone-700">Excel</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-light leading-relaxed">擅長清理複雜數據集、自動化腳本寫作與多維度驗證分析。</p>
+                </div>
+
+                <!-- Category 2: AI Integration -->
+                <div class="korea-card p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-widest mb-2">02. AI Productivity</div>
+                        <h3 class="text-lg font-medium text-korea-charcoal dark:text-stone-100 mb-6">AI 應用整合</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-xs font-medium border border-stone-200/60 dark:border-stone-700">ChatGPT</span>
+                            <span class="px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-xs font-medium border border-stone-200/60 dark:border-stone-700">Gemini Flash</span>
+                            <span class="px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-xs font-medium border border-stone-200/60 dark:border-stone-700">Prompt Eng.</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-light leading-relaxed">靈活運用生成式 AI 輔助腳本編寫與日常業務生產力倍增。</p>
+                </div>
+
+                <!-- Category 3: Active Learning (TibaMe) -->
+                <div class="korea-card p-7 rounded-3xl flex flex-col justify-between relative overflow-hidden border-korea-taupe/40">
+                    <div class="absolute top-0 right-0 bg-korea-taupe text-white text-[9px] font-semibold px-3 py-1 rounded-bl-xl uppercase tracking-widest">
+                        In Progress
+                    </div>
+                    <div>
+                        <div class="text-xs font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-widest mb-2">03. TibaMe Learning</div>
+                        <h3 class="text-lg font-medium text-korea-charcoal dark:text-stone-100 mb-1">持續學習中</h3>
+                        <p class="text-[11px] text-stone-500 dark:text-stone-400 mb-5">TibaMe 專業課程進修</p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-[11px] font-medium">LLM 應用</span>
+                            <span class="px-2.5 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-[11px] font-medium">NLP 自然語言</span>
+                            <span class="px-2.5 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-[11px] font-medium">SDD Vibe Coding</span>
+                            <span class="px-2.5 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 text-[11px] font-medium">Git 版本控制</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-light leading-relaxed">掌握最新 LLM 應用架構與現代化敏捷軟體開發思維。</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Credentials -->
+    <section id="certifications" class="py-24">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-widest text-korea-taupe dark:text-korea-clay uppercase">Credentials</span>
+                <h2 class="text-2xl sm:text-4xl font-light text-korea-charcoal dark:text-stone-100 mt-2">專業認證與證照</h2>
+                <div class="w-8 h-[1px] bg-korea-taupe mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                
+                <!-- Cert 1 -->
+                <div class="korea-card p-7 rounded-3xl flex items-center gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-korea-sand dark:bg-stone-800 flex items-center justify-center text-korea-taupe dark:text-korea-clay text-xl shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-widest block">iPAS National Cert</span>
+                        <h3 class="text-base font-medium text-korea-charcoal dark:text-stone-100 mt-0.5">iPAS 資安工程師初級證照</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 font-light mt-1">具備資訊安全基礎防護與數據隱私意識。</p>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="korea-card p-7 rounded-3xl flex items-center gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-korea-sand dark:bg-stone-800 flex items-center justify-center text-korea-taupe dark:text-korea-clay text-xl shrink-0">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-semibold text-korea-taupe dark:text-korea-clay uppercase tracking-widest block">Financial Ethics</span>
+                        <h3 class="text-base font-medium text-korea-charcoal dark:text-stone-100 mt-0.5">金融市場常識與職業道德證照</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 font-light mt-1">熟悉金融市場運作規範與職業倫理準則。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="py-24 bg-stone-100/80 dark:bg-stone-900/60 border-t border-stone-200/60 dark:border-stone-800">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+            <span class="text-xs font-semibold tracking-widest text-korea-taupe dark:text-korea-clay uppercase">Get In Touch</span>
+            <h2 class="text-3xl sm:text-4xl font-light text-korea-charcoal dark:text-stone-100 mt-2 mb-4">期待與您進一步交流</h2>
+            <p class="text-stone-600 dark:text-stone-300 text-sm max-w-xl mx-auto mb-10 font-normal leading-relaxed">
+                若您正在尋求具備財務思維、專案管理經驗並能實質落地 AI/Python 自動化的跨領域人才，歡迎隨時聯繫。
+            </p>
+
+            <button onclick="copyContactEmail()" class="px-9 py-4 rounded-full bg-korea-charcoal text-white dark:bg-stone-100 dark:text-korea-charcoal text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-all shadow-md inline-flex items-center gap-2">
+                <i class="fa-regular fa-copy"></i> 複製電子郵件地址
+            </button>
+
+            <div class="mt-20 pt-8 border-t border-stone-200/60 dark:border-stone-800 text-[11px] text-stone-500 dark:text-stone-400 flex flex-col sm:flex-row justify-between items-center gap-4 font-light">
+                <div>© 2026 Financial & AI Specialist Portfolio. Korean Minimalist Style.</div>
+                <div class="flex gap-4">
+                    <span>Tailwind CSS</span>
+                    <span>Responsive Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification Banner -->
+    <div id="toast-notification" class="fixed bottom-8 right-8 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-korea-charcoal text-white dark:bg-stone-200 dark:text-korea-charcoal px-6 py-3.5 rounded-full shadow-2xl flex items-center gap-3 border border-stone-700/30">
+            <i class="fa-solid fa-check text-xs"></i>
+            <span id="toast-message" class="text-xs font-medium tracking-wide">聯絡資訊已複製到剪貼簿！</span>
+        </div>
+    </div>
+
+    <script>
+        /* Mobile Drawer Toggle */
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        /* Background Music Control Logic */
+        let isMusicPlaying = false;
+        const bgMusic = document.getElementById('bg-music');
+        const musicIcon = document.getElementById('music-icon');
+        const mobileMusicIcon = document.getElementById('mobile-music-icon');
+        const musicText = document.getElementById('music-text');
+
+        function toggleMusic() {
+            if (!bgMusic) return;
+
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                isMusicPlaying = false;
+                if (musicIcon) musicIcon.className = "fa-solid fa-music text-[11px]";
+                if (mobileMusicIcon) mobileMusicIcon.className = "fa-solid fa-music";
+                if (musicText) musicText.textContent = "Music Off";
+                showToast("背景音樂已暫停");
+            } else {
+                bgMusic.play().then(() => {
+                    isMusicPlaying = true;
+                    if (musicIcon) musicIcon.className = "fa-solid fa-volume-high text-[11px] text-korea-taupe";
+                    if (mobileMusicIcon) mobileMusicIcon.className = "fa-solid fa-volume-high text-korea-taupe";
+                    if (musicText) musicText.textContent = "Music On";
+                    showToast("背景音樂播放中 🎵");
+                }).catch(err => {
+                    console.error("Autoplay error:", err);
+                    showToast("請再次點擊以播放音樂");
+                });
+            }
+        }
+
+        /* Dark / Light Theme Switching */
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+            const isDark = html.classList.toggle('dark');
+
+            if (isDark) {
+                if (themeIcon) themeIcon.className = "fa-solid fa-sun text-[11px]";
+                if (mobileThemeIcon) mobileThemeIcon.className = "fa-solid fa-sun";
+                localStorage.setItem('theme', 'dark');
+                showToast("已切換至深色模式 🌙");
+            } else {
+                if (themeIcon) themeIcon.className = "fa-solid fa-moon text-[11px]";
+                if (mobileThemeIcon) mobileThemeIcon.className = "fa-solid fa-moon";
+                localStorage.setItem('theme', 'light');
+                showToast("已切換至韓式簡約淺色模式 🕊️");
+            }
+        }
+
+        // Auto load saved theme settings
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            const themeIcon = document.getElementById('theme-icon');
+            const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+            if (themeIcon) themeIcon.className = "fa-solid fa-sun text-[11px]";
+            if (mobileThemeIcon) mobileThemeIcon.className = "fa-solid fa-sun";
+        }
+
+        /* Copy Email Functionality */
+        function copyContactEmail() {
+            const email = "your.email@example.com";
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email);
+            } else {
+                const textarea = document.createElement("textarea");
+                textarea.value = email;
+                textarea.style.position = "fixed";
+                textarea.style.left = "-9999px";
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Copy fallback failed', err);
+                }
+                document.body.removeChild(textarea);
+            }
+
+            showToast("已複製 Email (your.email@example.com) 至剪貼簿！");
+        }
+
+        /* Toast Message Helper */
+        function showToast(message) {
+            const toast = document.getElementById('toast-notification');
+            const toastMsg = document.getElementById('toast-message');
+            
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
